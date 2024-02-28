@@ -1,0 +1,8 @@
+.Header{
+    height: 15vh;
+    display: flex;
+    background-color: #02020e;
+}
+.Header img{
+    margin-left: 16px;
+}

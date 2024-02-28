@@ -1,12 +1,16 @@
 import {FC} from "react";
 import {Outlet} from "react-router-dom";
 
+import {Header} from "../../components";
+import css from './MainLayout.module.css'
+
 interface IProps {
 
 }
 const MainLayout:FC<IProps> = () => {
  return (
-  <div>
+  <div className={css.MainLayout}>
+      <Header/>
    <Outlet/>
   </div>
  );

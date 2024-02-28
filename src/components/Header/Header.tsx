@@ -1,12 +1,10 @@
-import {FC} from "react";
+import css from './Header.module.css'
+import logo from './logo.svg'
 
-interface IProps {
-
-}
-const Header:FC<IProps> = () => {
+const Header = () => {
  return (
-  <div>
-   Header
+  <div className={css.Header}>
+      <img src={logo} alt="logo"/>
   </div>
  );
 };
