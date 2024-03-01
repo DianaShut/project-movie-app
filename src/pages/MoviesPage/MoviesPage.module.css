@@ -1,0 +1,7 @@
+.MoviesPage{
+    display: flex;
+    background: rgba(21, 57, 76, .97);
+}
+.genresList{
+    width: 20vw;
+}

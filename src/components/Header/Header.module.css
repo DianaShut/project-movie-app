@@ -1,8 +1,19 @@
 .Header{
-    height: 15vh;
+    height: 17vh;
     display: flex;
-    background-color: #02020e;
+    background-color: #0f1c26;
 }
 .Header img{
-    margin-left: 16px;
+    margin-left: 28px;
+    margin-right: 35px;
+}
+.Header a{
+    text-decoration: none;
+    color: #a70024;
+    font-size: 30px;
+}
+.toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

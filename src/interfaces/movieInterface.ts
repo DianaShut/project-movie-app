@@ -1,3 +1,9 @@
+export interface IData{
+    page: number,
+    results: IMovie[],
+    total_pages: number,
+    total_results: number
+}
 export interface IMovie{
     adult: boolean;
     backdrop_path: string;
@@ -13,4 +19,6 @@ export interface IMovie{
     video: boolean;
     vote_count: number;
 }
+
+
 
