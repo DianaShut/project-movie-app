@@ -10,6 +10,7 @@ interface IProps {
 const Genre:FC<IProps> = ({genre}) => {
     const{id, name} = genre;
 
+
  return (
   <div>
    <div className={css.genre}>

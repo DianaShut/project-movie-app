@@ -1,6 +1,7 @@
 import css from './Header.module.css'
 import logo from './logo.svg'
 import {NavLink} from "react-router-dom";
+import {SearchBar} from "../SearchContainer";
 
 const Header = () => {
  return (

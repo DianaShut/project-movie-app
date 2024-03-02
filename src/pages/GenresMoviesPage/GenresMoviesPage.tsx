@@ -3,7 +3,7 @@ import {FC, useEffect, useState} from "react";
 import {Genres, Movie, Movies} from "../../components";
 import css from './GenresMoviesPage.module.css'
 import {IMovie} from "../../interfaces";
-import {genresService} from "../../services";
+import {apiService, genresService} from "../../services";
 import {useParams, useSearchParams} from "react-router-dom";
 import {GenreMovie} from "../../components/MoviesContainer/Movie/GenreMovie";
 
@@ -17,7 +17,9 @@ const GenresMoviesPage:FC = () => {
         genresService.getByIdMovie(page, id).then(({data:{results}}) => setGenresMovies(results))
     }, [page, id]);
 
- return (
+
+
+    return (
   <div className={css.GenresMoviesPage}>
       <div><Genres/></div>
       <div>

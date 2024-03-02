@@ -1,2 +1,2 @@
-export * from './SearchForm'
-export * from './Search'
+export * from './SearchResults'
+export * from './SearchBar'
