@@ -5,10 +5,11 @@ import {movieService} from "../../services";
 import {useParams} from "react-router-dom";
 import {MovieDetails} from "../../components";
 import css from './MoviesDetailsPage.css'
+import {IInfo} from "../../interfaces/infoInterface";
 
 
 const MovieDetailsPage:FC = () => {
-    const [movieDetails, setMovieDetails] = useState<IMovie>(null)
+    const [movieDetails, setMovieDetails] = useState<IInfo>(null)
     const {id} = useParams()
 
     useEffect(() => {
