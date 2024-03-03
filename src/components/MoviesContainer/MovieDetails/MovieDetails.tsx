@@ -10,12 +10,30 @@ interface IProps {
 const MovieDetails:FC<IProps> = ({movieDetails}) => {
     const {id, title, original_title, original_language, release_date, vote_count, video, backdrop_path, poster_path, overview, adult,  popularity, vote_average} = movieDetails;
     const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
+    // const [favoriteMovies, setFavoriteMovies] = useState([]);
+    //
+    // const addToFavorites = ({movieDetails}) => {
+    //     if (!favoriteMovies.find(favMovie => favMovie.id === movieDetails.id)) {
+    //        const updatedFavorites = setFavoriteMovies([...favoriteMovies, movieDetails]);
+    //        localStorage.setItem('favoriteMovies', JSON.stringify(updatedFavorites))
+    //     }
+    // };
+    //
+    // useEffect(() => {
+    //     const storedFavoriteMovies = localStorage.getItem('favoriteMovies');
+    //     if (storedFavoriteMovies) {
+    //         setFavoriteMovies(JSON.parse(storedFavoriteMovies));
+    //     }
+    // }, []);
+
  return (
   <div className={css.MoviesDetails}>
       <img src={imageUrl} alt={title}/>
       <div className={css.infoBlock}>
           <div className={css.info}>
               <h1 className={css.title}>{title}</h1>
+              {/*<div onClick={ () => addToFavorites(movieDetails)}>Add to Favorite</div>*/}
               <Rating className={css.Rating} name="customized-10" defaultValue={vote_average} precision={0.1} max={10} size="small" readOnly />
               <p className={css.title}>{original_title}</p>
               <div>Original title: {original_title}</div>
@@ -23,7 +41,6 @@ const MovieDetails:FC<IProps> = ({movieDetails}) => {
               <div>Original language: {original_language}</div>
               <br/>
               <div>Release date: {release_date}</div>
-              <div>{movieDetails.genres.name}</div>
           </div>
           <div className={css.overview}>
               {overview}

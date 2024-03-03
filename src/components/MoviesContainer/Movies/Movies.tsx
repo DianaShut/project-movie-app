@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, useState} from "react";
 import {SetURLSearchParams} from "react-router-dom";
 
 import {IMovie} from "../../../interfaces";
@@ -14,16 +14,17 @@ const Movies:FC<IProps> = ({movies, setQuery, page}) => {
 
     const prev = () => {
         setQuery(prev=>{
-            prev.set('page', `${+prev.get('page')-1}`)
+            const prevPage = prev.set('page', `${+prev.get('page')-1}`)
             return prev
         })
     };
     const next = () => {
         setQuery(prev=>{
-            prev.set('page', `${+prev.get('page')+1}`)
+            const nextPage = prev.set('page', `${+prev.get('page')+1}`)
             return prev
         })
     };
+    const prevPage = +page > 1
 
  return (
   <div>
@@ -34,8 +35,8 @@ const Movies:FC<IProps> = ({movies, setQuery, page}) => {
           </div>
       </div>
       <div className={css.buttons}>
-          <button onClick={prev}>prev</button>
-          <div>Page {page}</div>
+          <button onClick={prev} disabled={!prevPage}>prev</button>
+          <div>page {page}   </div>
           <button onClick={next}>next</button>
       </div>
   </div>

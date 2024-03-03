@@ -3,9 +3,9 @@ import {FC, useEffect, useState} from "react";
 import {Genres, Movie, Movies} from "../../components";
 import css from './GenresMoviesPage.module.css'
 import {IMovie} from "../../interfaces";
-import {apiService, genresService} from "../../services";
+import {genresService} from "../../services";
 import {useParams, useSearchParams} from "react-router-dom";
-import {GenreMovie} from "../../components/MoviesContainer/Movie/GenreMovie";
+
 
 const GenresMoviesPage:FC = () => {
     const [genresMovies, setGenresMovies] = useState<IMovie[]>([])

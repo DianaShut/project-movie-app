@@ -1,11 +1,9 @@
 .MoviesPage{
     display: flex;
-    background: rgba(21, 57, 76, .97);
 }
 .genresList{
     width: 20vw;
 }
-/*.search{*/
-/*    padding-bottom: 10px;*/
-/*    margin-bottom: 10px;*/
-/*}*/
+.light{
+    background-color: bisque;
+}

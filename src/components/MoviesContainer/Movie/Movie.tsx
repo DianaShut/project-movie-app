@@ -19,7 +19,7 @@ const Movie:FC<IProps> = ({movie}) => {
 
       <img src={imageUrl} alt={title}/>
       <div className={css.title}>{title}</div>
-      {/*<Rating className={css.Rating} name="customized-10" defaultValue={vote_average} precision={0.1} max={10} size="small" readOnly/>*/}
+
   </div>
  );
 };

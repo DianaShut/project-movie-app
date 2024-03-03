@@ -1,8 +1,8 @@
-import {createContext, FC, PropsWithChildren, useState} from "react";
+import {createContext, FC, PropsWithChildren, useEffect} from "react";
+import {useLocalStorage} from "../hooks";
 
 type ThemeContextType = {
-    theme: string;
-    toggleTheme: () => void;
+    any
 };
 
 interface IProps extends PropsWithChildren {
@@ -12,15 +12,16 @@ interface IProps extends PropsWithChildren {
 const ThemeContext = createContext<ThemeContextType | null>(null)
 
 const ContextProvider:FC<IProps> = ({children}) => {
-    const [theme, setTheme] = useState<string>('light');
+    const [theme, setTheme] = useLocalStorage('theme', 'dark');
 
-    const toggleTheme = () => {
-        setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-    };
-    const value = { theme, toggleTheme };
+    useEffect(() => {
+        if (theme === 'light') document.body.classList.add('light')
+        else document.body.classList.remove('light')
+    }, [theme]);
+
  return (
   <div>
-   <ThemeContext.Provider value={value}>
+   <ThemeContext.Provider value={[theme, setTheme]}>
        {children}
    </ThemeContext.Provider>
   </div>
