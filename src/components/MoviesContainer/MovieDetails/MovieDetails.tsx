@@ -11,21 +11,6 @@ const MovieDetails:FC<IProps> = ({movieDetails}) => {
     const {id, title, original_title, original_language, release_date, vote_count, video, backdrop_path, poster_path, overview, adult,  popularity, vote_average} = movieDetails;
     const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
-    // const [favoriteMovies, setFavoriteMovies] = useState([]);
-    //
-    // const addToFavorites = ({movieDetails}) => {
-    //     if (!favoriteMovies.find(favMovie => favMovie.id === movieDetails.id)) {
-    //        const updatedFavorites = setFavoriteMovies([...favoriteMovies, movieDetails]);
-    //        localStorage.setItem('favoriteMovies', JSON.stringify(updatedFavorites))
-    //     }
-    // };
-    //
-    // useEffect(() => {
-    //     const storedFavoriteMovies = localStorage.getItem('favoriteMovies');
-    //     if (storedFavoriteMovies) {
-    //         setFavoriteMovies(JSON.parse(storedFavoriteMovies));
-    //     }
-    // }, []);
 
  return (
   <div className={css.MoviesDetails}>
